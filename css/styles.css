@@ -1,0 +1,104 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Alike", sans-serif;
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+#main-container {
+    padding: 12px;
+    background-color: #1e1d1d;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 3px 2px 7px 0px black;
+
+}
+
+.display {
+    height: 130px;
+    width: 93%;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.previous-view {
+    height: 30%;
+    color: rgb(255 255 255 / 48%);
+    font-size: 20px;
+    margin-right: 6px;
+    margin-top: 10px;
+    letter-spacing: .2rem;
+}
+
+.current-preview {
+    height: 70%;
+    color: #fff;
+    font-size: 65px;
+    margin-right: 8px;
+    margin-bottom: -10px;
+}
+
+
+.btn {
+    display: flex;    
+    flex-wrap: wrap;
+    align-items: center;  
+    justify-content: center;  
+}
+
+.oper,
+#clearAC,
+#clearC,
+.num,
+.result {
+    height: 3.5rem;
+    width: 3.5rem;
+    margin: 5px;
+    border: none;
+    border-radius: 230px;
+    background-color: #636363;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+#clearAC,
+#clearC,
+.oper {
+    background-color: #b0aaaa;
+    color: #1e1d1d;
+    font-weight: bold;
+}
+
+#operDiv,
+#operMult,
+#operSum,
+#operSub,
+#operResult {
+    background-color: #eb963a;
+    color: #fff;
+}
+
+#zero {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    padding: 22px;
+}
+
+.hide {
+    display: none;
+}
