@@ -14,9 +14,9 @@ O projeto foi desenvolvido com um layout similiar a da calculadora do Iphone, ma
 
 ## Imagens
 
-![image](https://github.com/PalomaRosa/calculadora-js/assets/86445450/1ccb7417-ed7f-4b0c-99a3-1262ad8c705f)
-![image](https://github.com/PalomaRosa/calculadora-js/assets/86445450/8771ea73-a673-4a83-b91e-ca52da7ce6bc)
-![image](https://github.com/PalomaRosa/calculadora-js/assets/86445450/7d3f6159-f58a-4bb2-ba74-0a90f6605d79)
+![image](https://github.com/PalomaRosa/calculadora-js/assets/86445450/8e6e7ea5-f5bf-46b2-9d8c-762e7a2f0551)
+![image](https://github.com/PalomaRosa/calculadora-js/assets/86445450/8eee21bb-ec88-4612-bb23-7df95eb4d868)
+
 
 ## Como Usar
 
