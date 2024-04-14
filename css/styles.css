@@ -47,9 +47,12 @@ header {
     font-weight: bold;
 }
 
-.icons-right{
+.icons-right, 
+#iconsOp{
     filter: invert(1);
 }
+
+
 
 .display {
     height: 130px;

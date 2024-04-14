@@ -46,7 +46,6 @@ class Calculadora {
             currentPreview.textContent += digito;
         }  
         else if(digito === "+/-"){
-            console.log(primeiroBtn);
             if(primeiroBtn) {
               currentPreview.textContent = "";
                currentPreview.textContent += "-";
@@ -60,13 +59,13 @@ class Calculadora {
             previousView.textContent += digito; 
             
             this.clearDisplay(digito);        
-        } else if (digito === '%') {
+        } 
+        else if (digito === '%') {
             previousView.textContent += currentPreview.innerText;
             this.currentOperator += digito;
         } else {
             previousView.textContent += currentPreview.innerText;
-            previousView.textContent += digito;   
-            
+            previousView.textContent += digito;             
         }
     }
 
@@ -82,8 +81,6 @@ class Calculadora {
             numPrevious = parseFloat(previousPartes[0].replace(",", ".")); 
         }    
 
-        console.log(numPrevious);
-
         let operador = this.currentOperator;
 
         // Valida se exite mais de 1 operador para fazer o cálculo da porcentagem e valor negativo
@@ -93,9 +90,6 @@ class Calculadora {
         
         numCurrent = parseFloat(currentPreview.innerHTML.replace(",", "."));
         let result = 0;
-
-        
-        
 
         const operacoes = {
             "+": (numPrevious, numCurrent) => numPrevious + numCurrent,
@@ -127,6 +121,7 @@ class Calculadora {
 const calc = new Calculadora(currentPreview, previousView, timeEl);
 
 calc.addHeader();
+
 setInterval(() => {
     calc.addHeader();
 }, 1000);
@@ -134,30 +129,34 @@ setInterval(() => {
 btnOperators.forEach(operator => {
     operator.addEventListener("click", () => {
         let operatorSelect = operator.innerText;
-        if(primeiroBtn && operatorSelect != '+/-') return;
-        else if(operatorSelect === '+/-') {
-            calc.addDigito(operatorSelect);            
-            calc.alternarClearBtn();
-            primeiroBtn = false;
-        } else{
-
-            switch(operatorSelect){
-                case "=":
-                    calc.addDigito(operatorSelect);
-                    calc.processaCalculos(currentPreview.innerText);
-                    break
-                case "%":
-                    calc.addDigito(operatorSelect);
-                    calc.processaCalculos(currentPreview.innerText);
-                    break
-                case "+/-":
-                    break
-                default:
-                    calc.addDigito(operatorSelect);
-                    break;     
+        
+        if(operatorSelect === "") {
+            operatorSelect = operator.id === 'operDiv' ? "/" : "*";
+            calc.addDigito(operatorSelect);
+         } else {
+            if(primeiroBtn && operatorSelect != '+/-') return;
+            else if(operatorSelect === '+/-') {
+                calc.addDigito(operatorSelect);            
+                calc.alternarClearBtn();
+                primeiroBtn = false;
+            } else{
+                switch(operatorSelect){
+                    case "=":
+                        calc.addDigito(operatorSelect);
+                        calc.processaCalculos(currentPreview.innerText);
+                        break
+                    case "%":
+                        calc.addDigito(operatorSelect);
+                        calc.processaCalculos(currentPreview.innerText);
+                        break
+                    case "+/-":
+                        break
+                    default:
+                        calc.addDigito(operatorSelect);
+                        break;     
+                }
             }
-        }
-
+         }    
     });
 });
 
@@ -174,8 +173,7 @@ btnNumbers.forEach(number => {
     });
 });
 
-btnClearC.addEventListener("click", (e) =>{    
-    console.log(e.target);
+btnClearC.addEventListener("click", (e) =>{
     calc.alternarClearBtn();
     calc.clearDisplay(btnClearC.innerHTML);
 });
