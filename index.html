@@ -5,43 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alike&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
 </head>
 <body>
     <!-- Sucesso, melhorar layout e js -->
     <!-- Mais um comentário para testar os ambientes-->
-    <div id="main-container">
-        <div class="display">
-            <div class="previous-view"></div>
-            <div class="current-preview">0</div>
-        </div>
-        
-        <div class="buttons">
-            <div class="btn">
-                <button id="clearAC">AC</button> 
-                <button id="clearC" class="hide">C</button>               
-                <button class="oper">+/-</button>
-                <button class="oper">%</button>
-                <button class="oper" id="operDiv">/</button>
-                <button class="num">7</button>
-                <button class="num">8</button>
-                <button class="num">9</button>
-                <button class="oper" id="operMult">*</button>
-                <button class="num">4</button>
-                <button class="num">5</button>
-                <button class="num">6</button>
-                <button class="oper" id="operSub">-</button>
-                <button class="num">1</button>
-                <button class="num">2</button>
-                <button class="num">3</button>
-                <button class="oper" id="operSum">+</button>
-                <button class="num" id="zero">0</button>
-                <button class="num">,</button>
-                <button class="oper" id="operResult">=</button>
+    <div class="mobile-container">
+        <header>
+            <div class="hours"></div class="hours">
+            <div class="icons-right">
+                <img src="icons/telefone.png" width="15px" style="margin-right: 3px;">
+                <img src="icons/sinal-wifi.png" width="15px">
+                <img src="icons/bateria-fraca.png" width="20px">
+            </div>    
+        </header>           
+        <div id="main-container">
+            <div class="display">
+                <div class="previous-view"></div>
+                <div class="current-preview">0</div>
+            </div>        
+            <div class="buttons">
+                <div class="btn">
+                    <button id="clearAC">AC</button> 
+                    <button id="clearC" class="hide">C</button>               
+                    <button class="oper">+/-</button>
+                    <button class="oper">%</button>
+                    <button class="oper" id="operDiv">/</button>
+                    <button class="num">7</button>
+                    <button class="num">8</button>
+                    <button class="num">9</button>
+                    <button class="oper" id="operMult">*</button>
+                    <button class="num">4</button>
+                    <button class="num">5</button>
+                    <button class="num">6</button>
+                    <button class="oper" id="operSub">-</button>
+                    <button class="num">1</button>
+                    <button class="num">2</button>
+                    <button class="num">3</button>
+                    <button class="oper" id="operSum">+</button>
+                    <button class="num" id="zero">0</button>
+                    <button class="num">,</button>
+                    <button class="oper" id="operResult">=</button>
 
+                </div>
             </div>
         </div>
     </div>

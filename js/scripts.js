@@ -4,14 +4,40 @@ const btnOperators = document.querySelectorAll('.oper');
 const btnNumbers = document.querySelectorAll('.num');
 const btnClearAC = document.querySelector('#clearAC');
 const btnClearC = document.querySelector('#clearC');
+const timeEl = document.querySelector('.hours');
 
 let primeiroBtn = true;
 
 class Calculadora {
-    constructor(currentPreview, previousView) {
+    constructor(currentPreview, previousView, timeEl) {
         this.currentPreview = currentPreview;
         this.previousView = previousView;
+        this.timeEl = timeEl;
         this.currentOperator = "";
+    }
+
+    addHeader(){
+        function formatTime(time){
+            return time.length < 2 ? '0' + time : time;
+        }
+
+        const date = new Date();
+        const hours = formatTime(date.getHours().toString());
+        const minutes = formatTime(date.getMinutes().toString());
+
+        this.timeEl.textContent = `${hours}:${minutes}`;
+    }
+
+    clearDisplay(dig){
+        if(dig === "C" || dig === 'AC'){
+            currentPreview.innerText = 0;
+            previousView.innerText = "";
+            this.currentOperator = "";
+            primeiroBtn = true;
+
+        } else {
+            currentPreview.innerText = "";
+        }
     }
 
     addDigito(digito) {
@@ -89,17 +115,6 @@ class Calculadora {
         currentPreview.innerText = result.toString().replace(".", ",");
     }
 
-    clearDisplay(dig){
-        if(dig === "C" || dig === 'AC'){
-            currentPreview.innerText = 0;
-            previousView.innerText = "";
-            this.currentOperator = "";
-            primeiroBtn = true;
-
-        } else {
-            currentPreview.innerText = "";
-        }
-    }
 
     alternarClearBtn() {
 
@@ -109,20 +124,12 @@ class Calculadora {
 
 }
 
-const calc = new Calculadora(currentPreview, previousView);
+const calc = new Calculadora(currentPreview, previousView, timeEl);
 
-btnClearC.addEventListener("click", (e) =>{
-    
-    console.log(e.target);
-    calc.alternarClearBtn();
-    calc.clearDisplay(btnClearC.innerHTML);
-});
-
-btnClearAC.addEventListener("click", (e) =>{
-    if(e.target.innerText === 'AC') {
-        calc.clearDisplay(btnClearC.innerHTML);
-    }
-});
+calc.addHeader();
+setInterval(() => {
+    calc.addHeader();
+}, 1000);
 
 btnOperators.forEach(operator => {
     operator.addEventListener("click", () => {
@@ -165,4 +172,16 @@ btnNumbers.forEach(number => {
             calc.addDigito(number.innerText);
         }
     });
+});
+
+btnClearC.addEventListener("click", (e) =>{    
+    console.log(e.target);
+    calc.alternarClearBtn();
+    calc.clearDisplay(btnClearC.innerHTML);
+});
+
+btnClearAC.addEventListener("click", (e) =>{
+    if(e.target.innerText === 'AC') {
+        calc.clearDisplay(btnClearC.innerHTML);
+    }
 });
