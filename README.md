@@ -35,5 +35,5 @@ O projeto foi desenvolvido com um layout similiar a da calculadora do Iphone, ma
 
 Este é um projeto simples, mas útil para praticar habilidades de desenvolvimento web e lógica de programação. Sinta-se à vontade para contribuir, reportar problemas ou sugerir melhorias.
 
-> **Obs:** O projeto ainda está em desenvolvimento, então algumas partes do código serão melhoradas e irei implementar mais algumas detalhes no layout como a parte de responsividade.
+> **Obs:** O projeto ainda está em desenvolvimento, então algumas partes do código serão melhoradas e irei implementar mais alguns detalhes no layout como a parte de responsividade.
 
