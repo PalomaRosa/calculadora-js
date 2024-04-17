@@ -75,11 +75,7 @@ class Calculadora {
         const previousPartes = previous.split(operadores);
         let numPrevious;
 
-        if(previousPartes.length > 2){
-            numPrevious = -parseFloat(previousPartes[1].replace(",", "."));
-        } else {
-            numPrevious = parseFloat(previousPartes[0].replace(",", ".")); 
-        }    
+        numPrevious = previousPartes.length > 2 ? -parseFloat(previousPartes[1].replace(",", ".")) : parseFloat(previousPartes[0].replace(",", "."));  
 
         let operador = this.currentOperator;
 
@@ -100,11 +96,7 @@ class Calculadora {
         };
 
         // Verifica se o operador existe no objeto operacoes
-        if (operador in operacoes) {
-            result = operacoes[operador](numPrevious, numCurrent); // chamo a função pela variavel composta em [] e salvo o retorno da função em result
-        } else {
-            console.log('Operador desconhecido:', operador);
-        }
+        result = operador in operacoes ? operacoes[operador](numPrevious, numCurrent) : console.log('Operador desconhecido:', operador);
 
         currentPreview.innerText = result.toString().replace(".", ",");
     }
@@ -133,7 +125,7 @@ btnOperators.forEach(operator => {
         if(operatorSelect === "") {
             operatorSelect = operator.id === 'operDiv' ? "/" : "*";
             calc.addDigito(operatorSelect);
-         } else {
+        } else {
             if(primeiroBtn && operatorSelect != '+/-') return;
             else if(operatorSelect === '+/-') {
                 calc.addDigito(operatorSelect);            
@@ -156,7 +148,7 @@ btnOperators.forEach(operator => {
                         break;     
                 }
             }
-         }    
+        }    
     });
 });
 

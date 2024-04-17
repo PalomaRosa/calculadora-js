@@ -90,6 +90,10 @@ header {
     justify-content: center;  
 }
 
+.btn.clicked {
+    background-color: 636363;
+}
+
 .oper,
 #clearAC,
 #clearC,
@@ -100,7 +104,7 @@ header {
     margin: 5px;
     border: none;
     border-radius: 230px;
-    background-color: #636363;
+    background-color: #585757;
     color: #fff;
     font-size: 1.5rem;
 }
