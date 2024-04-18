@@ -154,6 +154,12 @@ btnOperators.forEach(operator => {
 
 btnNumbers.forEach(number => {
     number.addEventListener("click", () => {
+        number.id = 'clicked';
+
+        setTimeout(( ) => {
+            number.removeAttribute('id');
+        }, 400);
+
         if(primeiroBtn) {
             currentPreview.innerText = "";
             calc.addDigito(number.innerText);            

@@ -52,8 +52,6 @@ header {
     filter: invert(1);
 }
 
-
-
 .display {
     height: 130px;
     width: 93%;
@@ -90,8 +88,9 @@ header {
     justify-content: center;  
 }
 
-.btn.clicked {
-    background-color: 636363;
+#clicked {
+    filter: invert(1);
+    transition: filter 1s ease;
 }
 
 .oper,
@@ -126,7 +125,7 @@ header {
     color: #fff;
 }
 
-#zero {
+.num.zero {
     width: 120px;
     display: flex;
     align-items: center;
